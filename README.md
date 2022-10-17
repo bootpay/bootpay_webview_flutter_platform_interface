@@ -1,23 +1,3 @@
-# webview_flutter_platform_interface
+# bootpay_webview_flutter_platform_interface
 
-A common platform interface for the [`webview_flutter`](https://pub.dev/packages/webview_flutter) plugin.
-
-This interface allows platform-specific implementations of the `webview_flutter`
-plugin, as well as the plugin itself, to ensure they are supporting the
-same interface.
-
-# Usage
-
-To implement a new platform-specific implementation of `webview_flutter`, extend
-[`WebviewPlatform`](lib/src/platform_interface/webview_platform.dart) with an implementation that performs the
-platform-specific behavior, and when you register your plugin, set the default
-`WebviewPlatform` by calling
-`WebviewPlatform.setInstance(MyPlatformWebview())`.
-
-# Note on breaking changes
-
-Strongly prefer non-breaking changes (such as adding a method to the interface)
-over breaking changes for this package.
-
-See https://flutter.dev/go/platform-interface-breaking-changes for a discussion
-on why a less-clean interface is preferable to a breaking change.
+부트페이가 [`webview_flutter`](https://pub.dev/packages/webview_flutter) 프로젝트를 fork 하여 국내 결제환경에 맞게 개선하였습니다.  
