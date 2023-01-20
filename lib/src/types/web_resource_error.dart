@@ -4,7 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 
-/// Possible error type categorizations used by [BTWebResourceError].
+/// Possible error type categorizations used by [WebResourceError].
 enum WebResourceErrorType {
   /// User authentication failed on server.
   authentication,

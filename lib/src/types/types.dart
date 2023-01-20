@@ -11,5 +11,5 @@ export 'bt_platform_navigation_delegate_creation_params.dart';
 export 'bt_platform_webview_controller_creation_params.dart';
 export 'bt_platform_webview_cookie_manager_creation_params.dart';
 export 'bt_platform_webview_widget_creation_params.dart';
-export 'bt_web_resource_error.dart';
+export 'web_resource_error.dart';
 export 'bt_webview_cookie.dart';
