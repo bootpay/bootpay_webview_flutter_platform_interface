@@ -15,8 +15,8 @@ void main() {
   });
 
   test('Cannot be implemented with `implements`', () {
-    const PlatformNavigationDelegateCreationParams params =
-        PlatformNavigationDelegateCreationParams();
+    const BTPlatformNavigationDelegateCreationParams params =
+        BTPlatformNavigationDelegateCreationParams();
     when(WebViewPlatform.instance!.createPlatformNavigationDelegate(params))
         .thenReturn(ImplementsPlatformNavigationDelegate());
 
@@ -33,8 +33,8 @@ void main() {
   });
 
   test('Can be extended', () {
-    const PlatformNavigationDelegateCreationParams params =
-        PlatformNavigationDelegateCreationParams();
+    const BTPlatformNavigationDelegateCreationParams params =
+        BTPlatformNavigationDelegateCreationParams();
     when(WebViewPlatform.instance!.createPlatformNavigationDelegate(params))
         .thenReturn(ExtendsPlatformNavigationDelegate(params));
 
@@ -42,8 +42,8 @@ void main() {
   });
 
   test('Can be mocked with `implements`', () {
-    const PlatformNavigationDelegateCreationParams params =
-        PlatformNavigationDelegateCreationParams();
+    const BTPlatformNavigationDelegateCreationParams params =
+        BTPlatformNavigationDelegateCreationParams();
     when(WebViewPlatform.instance!.createPlatformNavigationDelegate(params))
         .thenReturn(MockNavigationDelegate());
 
@@ -56,7 +56,7 @@ void main() {
       () {
     final PlatformNavigationDelegate callbackDelegate =
         ExtendsPlatformNavigationDelegate(
-            const PlatformNavigationDelegateCreationParams());
+            const BTPlatformNavigationDelegateCreationParams());
 
     expect(
       () => callbackDelegate.setOnNavigationRequest(
@@ -71,7 +71,7 @@ void main() {
       () {
     final PlatformNavigationDelegate callbackDelegate =
         ExtendsPlatformNavigationDelegate(
-            const PlatformNavigationDelegateCreationParams());
+            const BTPlatformNavigationDelegateCreationParams());
 
     expect(
       () => callbackDelegate.setOnPageStarted((String url) {}),
@@ -85,7 +85,7 @@ void main() {
       () {
     final PlatformNavigationDelegate callbackDelegate =
         ExtendsPlatformNavigationDelegate(
-            const PlatformNavigationDelegateCreationParams());
+            const BTPlatformNavigationDelegateCreationParams());
 
     expect(
       () => callbackDelegate.setOnPageFinished((String url) {}),
@@ -99,7 +99,7 @@ void main() {
       () {
     final PlatformNavigationDelegate callbackDelegate =
         ExtendsPlatformNavigationDelegate(
-            const PlatformNavigationDelegateCreationParams());
+            const BTPlatformNavigationDelegateCreationParams());
 
     expect(
       () => callbackDelegate.setOnProgress((int progress) {}),
@@ -113,10 +113,10 @@ void main() {
       () {
     final PlatformNavigationDelegate callbackDelegate =
         ExtendsPlatformNavigationDelegate(
-            const PlatformNavigationDelegateCreationParams());
+            const BTPlatformNavigationDelegateCreationParams());
 
     expect(
-      () => callbackDelegate.setOnWebResourceError((WebResourceError error) {}),
+      () => callbackDelegate.setOnWebResourceError((BTWebResourceError error) {}),
       throwsUnimplementedError,
     );
   });
@@ -142,6 +142,6 @@ class MockNavigationDelegate extends Mock
 
 class ExtendsPlatformNavigationDelegate extends PlatformNavigationDelegate {
   ExtendsPlatformNavigationDelegate(
-      PlatformNavigationDelegateCreationParams params)
+      BTPlatformNavigationDelegateCreationParams params)
       : super.implementation(params);
 }

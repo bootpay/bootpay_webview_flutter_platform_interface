@@ -14,11 +14,11 @@ import 'webview_platform.dart';
 /// changes. Extending this class (using `extends`) ensures that the subclass
 /// will get the default implementation, while platform implementations that
 /// `implements` this interface will be broken by newly added
-/// [PlatformWebViewCookieManager] methods.
-abstract class PlatformWebViewCookieManager extends PlatformInterface {
-  /// Creates a new [PlatformWebViewCookieManager]
-  factory PlatformWebViewCookieManager(
-      PlatformWebViewCookieManagerCreationParams params) {
+/// [PlatformBTWebViewCookieManager] methods.
+abstract class PlatformBTWebViewCookieManager extends PlatformInterface {
+  /// Creates a new [PlatformBTWebViewCookieManager]
+  factory PlatformBTWebViewCookieManager(
+      BTPlatformBTWebViewCookieManagerCreationParams params) {
     assert(
       WebViewPlatform.instance != null,
       'A platform implementation for `webview_flutter` has not been set. Please '
@@ -26,25 +26,25 @@ abstract class PlatformWebViewCookieManager extends PlatformInterface {
       '`WebViewPlatform.instance` before use. For unit testing, '
       '`WebViewPlatform.instance` can be set with your own test implementation.',
     );
-    final PlatformWebViewCookieManager cookieManagerDelegate =
+    final PlatformBTWebViewCookieManager cookieManagerDelegate =
         WebViewPlatform.instance!.createPlatformCookieManager(params);
     PlatformInterface.verify(cookieManagerDelegate, _token);
     return cookieManagerDelegate;
   }
 
   /// Used by the platform implementation to create a new
-  /// [PlatformWebViewCookieManager].
+  /// [PlatformBTWebViewCookieManager].
   ///
   /// Should only be used by platform implementations because they can't extend
   /// a class that only contains a factory constructor.
   @protected
-  PlatformWebViewCookieManager.implementation(this.params)
+  PlatformBTWebViewCookieManager.implementation(this.params)
       : super(token: _token);
 
   static final Object _token = Object();
 
-  /// The parameters used to initialize the [PlatformWebViewCookieManager].
-  final PlatformWebViewCookieManagerCreationParams params;
+  /// The parameters used to initialize the [PlatformBTWebViewCookieManager].
+  final BTPlatformBTWebViewCookieManagerCreationParams params;
 
   /// Clears all cookies for all [WebView] instances.
   ///
@@ -55,7 +55,7 @@ abstract class PlatformWebViewCookieManager extends PlatformInterface {
   }
 
   /// Sets a cookie for all [WebView] instances.
-  Future<void> setCookie(WebViewCookie cookie) {
+  Future<void> setCookie(BTWebViewCookie cookie) {
     throw UnimplementedError(
         'setCookie is not implemented on the current platform');
   }

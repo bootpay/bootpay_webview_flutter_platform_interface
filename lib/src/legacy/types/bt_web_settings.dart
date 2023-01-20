@@ -8,20 +8,20 @@ import 'javascript_mode.dart';
 
 /// A single setting for configuring a WebViewPlatform which may be absent.
 @immutable
-class WebSetting<T> {
+class BTWebSetting<T> {
   /// Constructs an absent setting instance.
   ///
   /// The [isPresent] field for the instance will be false.
   ///
   /// Accessing [value] for an absent instance will throw.
-  const WebSetting.absent()
+  const BTWebSetting.absent()
       : _value = null,
         isPresent = false;
 
   /// Constructs a setting of the given `value`.
   ///
   /// The [isPresent] field for the instance will be true.
-  const WebSetting.of(T value)
+  const BTWebSetting.of(T value)
       : _value = value,
         isPresent = true;
 
@@ -29,10 +29,10 @@ class WebSetting<T> {
 
   /// The setting's value.
   ///
-  /// Throws if [WebSetting.isPresent] is false.
+  /// Throws if [BTWebSetting.isPresent] is false.
   T get value {
     if (!isPresent) {
-      throw StateError('Cannot access a value of an absent WebSetting');
+      throw StateError('Cannot access a value of an absent BTWebSetting');
     }
     assert(isPresent);
     // The intention of this getter is to return T whether it is nullable or
@@ -47,7 +47,7 @@ class WebSetting<T> {
 
   /// True when this web setting instance contains a value.
   ///
-  /// When false the [WebSetting.value] getter throws.
+  /// When false the [BTWebSetting.value] getter throws.
   final bool isPresent;
 
   @override
@@ -56,7 +56,7 @@ class WebSetting<T> {
       return false;
     }
 
-    return other is WebSetting<T> &&
+    return other is BTWebSetting<T> &&
         other.isPresent == isPresent &&
         other._value == _value;
   }
@@ -71,12 +71,12 @@ class WebSetting<T> {
 /// [WebViewPlatform#updateSettings].
 ///
 /// The `userAgent` parameter must not be null.
-class WebSettings {
+class BTWebSettings {
   /// Construct an instance with initial settings. Future setting changes can be
   /// sent with [WebviewPlatform#updateSettings].
   ///
   /// The `userAgent` parameter must not be null.
-  WebSettings({
+  BTWebSettings({
     this.javascriptMode,
     this.hasNavigationDelegate,
     this.hasProgressTracking,
@@ -115,7 +115,7 @@ class WebSettings {
   /// last time it was set.
   ///
   /// See also [WebView.userAgent].
-  final WebSetting<String?> userAgent;
+  final BTWebSetting<String?> userAgent;
 
   /// Sets whether the WebView should support zooming using its on-screen zoom controls and gestures.
   final bool? zoomEnabled;
@@ -127,6 +127,6 @@ class WebSettings {
 
   @override
   String toString() {
-    return 'WebSettings(javascriptMode: $javascriptMode, hasNavigationDelegate: $hasNavigationDelegate, hasProgressTracking: $hasProgressTracking, debuggingEnabled: $debuggingEnabled, gestureNavigationEnabled: $gestureNavigationEnabled, userAgent: $userAgent, allowsInlineMediaPlayback: $allowsInlineMediaPlayback)';
+    return 'BTWebSettings(javascriptMode: $javascriptMode, hasNavigationDelegate: $hasNavigationDelegate, hasProgressTracking: $hasProgressTracking, debuggingEnabled: $debuggingEnabled, gestureNavigationEnabled: $gestureNavigationEnabled, userAgent: $userAgent, allowsInlineMediaPlayback: $allowsInlineMediaPlayback)';
   }
 }

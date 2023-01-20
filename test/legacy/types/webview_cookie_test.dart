@@ -6,7 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:bootpay_webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
 
 void main() {
-  test('WebViewCookie should serialize correctly', () {
+  test('BTWebViewCookie should serialize correctly', () {
     WebViewCookie cookie;
     Map<String, String> serializedCookie;
     // Test serialization

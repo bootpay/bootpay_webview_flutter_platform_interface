@@ -36,12 +36,12 @@ abstract class WebViewPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  /// Creates a new [PlatformWebViewCookieManager].
+  /// Creates a new [PlatformBTWebViewCookieManager].
   ///
   /// This function should only be called by the app-facing package.
-  /// Look at using [WebViewCookieManager] in `webview_flutter` instead.
-  PlatformWebViewCookieManager createPlatformCookieManager(
-    PlatformWebViewCookieManagerCreationParams params,
+  /// Look at using [BTWebViewCookieManager] in `webview_flutter` instead.
+  PlatformBTWebViewCookieManager createPlatformCookieManager(
+    BTPlatformBTWebViewCookieManagerCreationParams params,
   ) {
     throw UnimplementedError(
         'createPlatformCookieManager is not implemented on the current platform.');
@@ -52,7 +52,7 @@ abstract class WebViewPlatform extends PlatformInterface {
   /// This function should only be called by the app-facing package.
   /// Look at using [NavigationDelegate] in `webview_flutter` instead.
   PlatformNavigationDelegate createPlatformNavigationDelegate(
-    PlatformNavigationDelegateCreationParams params,
+    BTPlatformNavigationDelegateCreationParams params,
   ) {
     throw UnimplementedError(
         'createPlatformNavigationDelegate is not implemented on the current platform.');
@@ -63,7 +63,7 @@ abstract class WebViewPlatform extends PlatformInterface {
   /// This function should only be called by the app-facing package.
   /// Look at using [WebViewController] in `webview_flutter` instead.
   PlatformWebViewController createPlatformWebViewController(
-    PlatformWebViewControllerCreationParams params,
+    BTPlatformWebViewControllerCreationParams params,
   ) {
     throw UnimplementedError(
         'createPlatformWebViewController is not implemented on the current platform.');
@@ -74,7 +74,7 @@ abstract class WebViewPlatform extends PlatformInterface {
   /// This function should only be called by the app-facing package.
   /// Look at using [WebViewWidget] in `webview_flutter` instead.
   PlatformWebViewWidget createPlatformWebViewWidget(
-    PlatformWebViewWidgetCreationParams params,
+    BTPlatformWebViewWidgetCreationParams params,
   ) {
     throw UnimplementedError(
         'createPlatformWebViewWidget is not implemented on the current platform.');

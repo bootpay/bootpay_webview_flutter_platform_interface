@@ -1,3 +1,6 @@
+## 2.0.11
+* renames
+
 ## 2.0.1
 * clone version 2.0.1
 * Improves error message when a platform interface class is used before `WebViewPlatform.instance` has been set.
@@ -87,7 +90,7 @@
 
 ## 1.1.0
 
-* Add `zoomEnabled` functionality to `WebSettings`.
+* Add `zoomEnabled` functionality to `BTWebSettings`.
 
 ## 1.0.0
 

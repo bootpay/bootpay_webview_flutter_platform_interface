@@ -9,6 +9,6 @@ export 'javascript_message.dart';
 export 'javascript_mode.dart';
 export 'web_resource_error.dart';
 export 'web_resource_error_type.dart';
-export 'web_settings.dart';
+export 'bt_web_settings.dart';
 export 'webview_cookie.dart';
 export 'webview_request.dart';

@@ -4,7 +4,7 @@
 
 import 'package:flutter/foundation.dart';
 
-/// Possible error type categorizations used by [WebResourceError].
+/// Possible error type categorizations used by [BTWebResourceError].
 enum WebResourceErrorType {
   /// User authentication failed on server.
   authentication,
@@ -73,10 +73,10 @@ enum WebResourceErrorType {
 /// this class.
 ///
 /// {@tool sample}
-/// This example demonstrates how to extend the [WebResourceError] to
+/// This example demonstrates how to extend the [BTWebResourceError] to
 /// provide additional platform specific parameters.
 ///
-/// When extending [WebResourceError] additional parameters should always
+/// When extending [BTWebResourceError] additional parameters should always
 /// accept `null` or have a default value to prevent breaking changes.
 ///
 /// ```dart
@@ -100,9 +100,9 @@ enum WebResourceErrorType {
 /// ```
 /// {@end-tool}
 @immutable
-class WebResourceError {
-  /// Used by the platform implementation to create a new [WebResourceError].
-  const WebResourceError({
+class BTWebResourceError {
+  /// Used by the platform implementation to create a new [BTWebResourceError].
+  const BTWebResourceError({
     required this.errorCode,
     required this.description,
     this.errorType,

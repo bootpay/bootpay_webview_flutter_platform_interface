@@ -10,7 +10,7 @@ import 'webview_platform.dart';
 /// Interface for a platform implementation of a web view widget.
 abstract class PlatformWebViewWidget extends PlatformInterface {
   /// Creates a new [PlatformWebViewWidget]
-  factory PlatformWebViewWidget(PlatformWebViewWidgetCreationParams params) {
+  factory PlatformWebViewWidget(BTPlatformWebViewWidgetCreationParams params) {
     assert(
       WebViewPlatform.instance != null,
       'A platform implementation for `webview_flutter` has not been set. Please '
@@ -35,7 +35,7 @@ abstract class PlatformWebViewWidget extends PlatformInterface {
   static final Object _token = Object();
 
   /// The parameters used to initialize the [PlatformWebViewWidget].
-  final PlatformWebViewWidgetCreationParams params;
+  final BTPlatformWebViewWidgetCreationParams params;
 
   /// Builds a new WebView.
   ///

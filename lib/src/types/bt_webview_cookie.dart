@@ -4,11 +4,11 @@
 
 import 'package:flutter/foundation.dart';
 
-/// A cookie that can be set globally for all web views using [WebViewCookieManagerPlatform].
+/// A cookie that can be set globally for all web views using [BTWebViewCookieManagerPlatform].
 @immutable
-class WebViewCookie {
-  /// Creates a new [WebViewCookieDelegate]
-  const WebViewCookie({
+class BTWebViewCookie {
+  /// Creates a new [BTWebViewCookieDelegate]
+  const BTWebViewCookie({
     required this.name,
     required this.value,
     required this.domain,

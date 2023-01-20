@@ -22,9 +22,9 @@ import 'package:bootpay_webview_flutter_platform_interface/src/webview_platform.
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakePlatformNavigationDelegateCreationParams_0 extends _i1.SmartFake
-    implements _i2.PlatformNavigationDelegateCreationParams {
-  _FakePlatformNavigationDelegateCreationParams_0(
+class _FakeBTPlatformNavigationDelegateCreationParams_0 extends _i1.SmartFake
+    implements _i2.BTPlatformNavigationDelegateCreationParams {
+  _FakeBTPlatformNavigationDelegateCreationParams_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -43,14 +43,14 @@ class MockPlatformNavigationDelegate extends _i1.Mock
   }
 
   @override
-  _i2.PlatformNavigationDelegateCreationParams get params =>
+  _i2.BTPlatformNavigationDelegateCreationParams get params =>
       (super.noSuchMethod(
         Invocation.getter(#params),
-        returnValue: _FakePlatformNavigationDelegateCreationParams_0(
+        returnValue: _FakeBTPlatformNavigationDelegateCreationParams_0(
           this,
           Invocation.getter(#params),
         ),
-      ) as _i2.PlatformNavigationDelegateCreationParams);
+      ) as _i2.BTPlatformNavigationDelegateCreationParams);
   @override
   _i4.Future<void> setOnNavigationRequest(
           _i3.NavigationRequestCallback? onNavigationRequest) =>

@@ -8,29 +8,29 @@ import 'package:flutter/foundation.dart';
 ///
 /// Platform specific implementations can add additional fields by extending
 /// this class and providing a factory method that takes the
-/// [JavaScriptMessage] as a parameter.
+/// [BTJavaScriptMessage] as a parameter.
 ///
 /// {@tool sample}
-/// This example demonstrates how to extend the [JavaScriptMessage] to
+/// This example demonstrates how to extend the [BTJavaScriptMessage] to
 /// provide additional platform specific parameters.
 ///
-/// When extending [JavaScriptMessage] additional parameters should always
+/// When extending [BTJavaScriptMessage] additional parameters should always
 /// accept `null` or have a default value to prevent breaking changes.
 ///
 /// ```dart
 /// @immutable
-/// class WKWebViewScriptMessage extends JavaScriptMessage {
+/// class WKWebViewScriptMessage extends BTJavaScriptMessage {
 ///   WKWebViewScriptMessage._(
-///     JavaScriptMessage javaScriptMessage,
+///     BTJavaScriptMessage BTJavaScriptMessage,
 ///     this.extraData,
-///   ) : super(javaScriptMessage.message);
+///   ) : super(BTJavaScriptMessage.message);
 ///
 ///   factory WKWebViewScriptMessage.fromJavaScripMessage(
-///     JavaScriptMessage javaScripMessage, {
+///     BTJavaScriptMessage javaScripMessage, {
 ///     String? extraData,
 ///   }) {
 ///     return WKWebViewScriptMessage._(
-///       javaScriptMessage,
+///       BTJavaScriptMessage,
 ///       extraData: extraData,
 ///     );
 ///   }
@@ -40,9 +40,9 @@ import 'package:flutter/foundation.dart';
 /// ```
 /// {@end-tool}
 @immutable
-class JavaScriptMessage {
+class BTJavaScriptMessage {
   /// Creates a new JavaScript message object.
-  const JavaScriptMessage({
+  const BTJavaScriptMessage({
     required this.message,
   });
 

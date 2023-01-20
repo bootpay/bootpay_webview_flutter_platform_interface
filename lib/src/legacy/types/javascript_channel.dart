@@ -5,7 +5,7 @@
 import 'javascript_message.dart';
 
 /// Callback type for handling messages sent from JavaScript running in a web view.
-typedef JavascriptMessageHandler = void Function(JavascriptMessage message);
+typedef BTJavaScriptMessageHandler = void Function(BTJavaScriptMessage message);
 
 final RegExp _validChannelNames = RegExp(r'^[a-zA-Z_][a-zA-Z0-9_]*$');
 
@@ -35,5 +35,5 @@ class JavascriptChannel {
   final String name;
 
   /// A callback that's invoked when a message is received through the channel.
-  final JavascriptMessageHandler onMessageReceived;
+  final BTJavaScriptMessageHandler onMessageReceived;
 }

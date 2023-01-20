@@ -30,10 +30,10 @@ class CreationParams {
   /// When null the webview will be created without loading any page.
   final String? initialUrl;
 
-  /// The initial [WebSettings] for the new webview.
+  /// The initial [BTWebSettings] for the new webview.
   ///
   /// This can later be updated with [WebViewPlatformController.updateSettings].
-  final WebSettings? webSettings;
+  final BTWebSettings? webSettings;
 
   /// The initial set of JavaScript channels that are configured for this webview.
   ///
@@ -66,6 +66,6 @@ class CreationParams {
 
   @override
   String toString() {
-    return 'CreationParams(initialUrl: $initialUrl, settings: $webSettings, javascriptChannelNames: $javascriptChannelNames, UserAgent: $userAgent, backgroundColor: $backgroundColor, cookies: $cookies)';
+    return 'CreationParams(initialUrl: $initialUrl, settings: $BTWebSettings, javascriptChannelNames: $javascriptChannelNames, UserAgent: $userAgent, backgroundColor: $backgroundColor, cookies: $cookies)';
   }
 }

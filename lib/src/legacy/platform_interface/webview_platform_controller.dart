@@ -102,7 +102,7 @@ abstract class WebViewPlatformController {
   ///
   /// Any non null field in `settings` will be set as the new setting value.
   /// All null fields in `settings` are ignored.
-  Future<void> updateSettings(WebSettings setting) {
+  Future<void> updateSettings(BTWebSettings setting) {
     throw UnimplementedError(
         'WebView updateSettings is not implemented on the current platform');
   }

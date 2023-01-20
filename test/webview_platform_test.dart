@@ -24,7 +24,7 @@ void main() {
       () {
     expect(
       () => PlatformNavigationDelegate(
-        const PlatformNavigationDelegateCreationParams(),
+        const BTPlatformNavigationDelegateCreationParams(),
       ),
       throwsA(isA<AssertionError>().having(
         (AssertionError error) => error.message,
@@ -38,7 +38,7 @@ void main() {
 
     expect(
       () => PlatformWebViewController(
-        const PlatformWebViewControllerCreationParams(),
+        const BTPlatformWebViewControllerCreationParams(),
       ),
       throwsA(isA<AssertionError>().having(
         (AssertionError error) => error.message,
@@ -51,8 +51,8 @@ void main() {
     );
 
     expect(
-      () => PlatformWebViewCookieManager(
-        const PlatformWebViewCookieManagerCreationParams(),
+      () => PlatformBTWebViewCookieManager(
+        const BTPlatformBTWebViewCookieManagerCreationParams(),
       ),
       throwsA(isA<AssertionError>().having(
         (AssertionError error) => error.message,
@@ -66,7 +66,7 @@ void main() {
 
     expect(
       () => PlatformWebViewWidget(
-        PlatformWebViewWidgetCreationParams(
+        BTPlatformWebViewWidgetCreationParams(
           controller: MockWebViewControllerDelegate(),
         ),
       ),
@@ -111,7 +111,7 @@ void main() {
 
     expect(
       () => webViewPlatform.createPlatformCookieManager(
-          const PlatformWebViewCookieManagerCreationParams()),
+          const BTPlatformBTWebViewCookieManagerCreationParams()),
       throwsUnimplementedError,
     );
   });
@@ -124,7 +124,7 @@ void main() {
 
     expect(
       () => webViewPlatform.createPlatformNavigationDelegate(
-          const PlatformNavigationDelegateCreationParams()),
+          const BTPlatformNavigationDelegateCreationParams()),
       throwsUnimplementedError,
     );
   });
@@ -137,7 +137,7 @@ void main() {
 
     expect(
       () => webViewPlatform.createPlatformWebViewController(
-          const PlatformWebViewControllerCreationParams()),
+          const BTPlatformWebViewControllerCreationParams()),
       throwsUnimplementedError,
     );
   });
@@ -152,7 +152,7 @@ void main() {
 
     expect(
       () => webViewPlatform.createPlatformWebViewWidget(
-          PlatformWebViewWidgetCreationParams(controller: controller)),
+          BTPlatformWebViewWidgetCreationParams(controller: controller)),
       throwsUnimplementedError,
     );
   });

@@ -38,16 +38,16 @@ extension LoadRequestMethodExtensions on LoadRequestMethod {
 /// this class.
 ///
 /// {@tool sample}
-/// This example demonstrates how to extend the [LoadRequestParams] to
+/// This example demonstrates how to extend the [BTLoadRequestParams] to
 /// provide additional platform specific parameters.
 ///
-/// When extending [LoadRequestParams] additional parameters should always
+/// When extending [BTLoadRequestParams] additional parameters should always
 /// accept `null` or have a default value to prevent breaking changes.
 ///
 /// ```dart
-/// class AndroidLoadRequestParams extends LoadRequestParams {
-///   AndroidLoadRequestParams._({
-///     required LoadRequestParams params,
+/// class AndroidBTLoadRequestParams extends BTLoadRequestParams {
+///   AndroidBTLoadRequestParams._({
+///     required BTLoadRequestParams params,
 ///     this.historyUrl,
 ///   }) : super(
 ///     uri: params.uri,
@@ -56,11 +56,11 @@ extension LoadRequestMethodExtensions on LoadRequestMethod {
 ///     headers: params.headers,
 ///   );
 ///
-///   factory AndroidLoadRequestParams.fromLoadRequestParams(
-///     LoadRequestParams params, {
+///   factory AndroidBTLoadRequestParams.fromBTLoadRequestParams(
+///     BTLoadRequestParams params, {
 ///     Uri? historyUrl,
 ///   }) {
-///     return AndroidLoadRequestParams._(params, historyUrl: historyUrl);
+///     return AndroidBTLoadRequestParams._(params, historyUrl: historyUrl);
 ///   }
 ///
 ///   final Uri? historyUrl;
@@ -68,9 +68,9 @@ extension LoadRequestMethodExtensions on LoadRequestMethod {
 /// ```
 /// {@end-tool}
 @immutable
-class LoadRequestParams {
-  /// Used by the platform implementation to create a new [LoadRequestParams].
-  const LoadRequestParams({
+class BTLoadRequestParams {
+  /// Used by the platform implementation to create a new [BTLoadRequestParams].
+  const BTLoadRequestParams({
     required this.uri,
     this.method = LoadRequestMethod.get,
     this.headers = const <String, String>{},

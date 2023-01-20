@@ -24,7 +24,7 @@ abstract class WebViewPlatformCallbacksHandler {
   void onPageFinished(String url);
 
   /// Invoked by [WebViewPlatformController] when a page is loading.
-  /// /// Only works when [WebSettings.hasProgressTracking] is set to `true`.
+  /// /// Only works when [BTWebSettings.hasProgressTracking] is set to `true`.
   void onProgress(int progress);
 
   /// Report web resource loading error to the host application.

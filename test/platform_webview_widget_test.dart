@@ -18,8 +18,8 @@ void main() {
   test('Cannot be implemented with `implements`', () {
     final MockWebViewControllerDelegate controller =
         MockWebViewControllerDelegate();
-    final PlatformWebViewWidgetCreationParams params =
-        PlatformWebViewWidgetCreationParams(controller: controller);
+    final BTPlatformWebViewWidgetCreationParams params =
+        BTPlatformWebViewWidgetCreationParams(controller: controller);
     when(WebViewPlatform.instance!.createPlatformWebViewWidget(params))
         .thenReturn(ImplementsWebViewWidgetDelegate());
 
@@ -38,8 +38,8 @@ void main() {
   test('Can be extended', () {
     final MockWebViewControllerDelegate controller =
         MockWebViewControllerDelegate();
-    final PlatformWebViewWidgetCreationParams params =
-        PlatformWebViewWidgetCreationParams(controller: controller);
+    final BTPlatformWebViewWidgetCreationParams params =
+        BTPlatformWebViewWidgetCreationParams(controller: controller);
     when(WebViewPlatform.instance!.createPlatformWebViewWidget(params))
         .thenReturn(ExtendsWebViewWidgetDelegate(params));
 
@@ -49,8 +49,8 @@ void main() {
   test('Can be mocked with `implements`', () {
     final MockWebViewControllerDelegate controller =
         MockWebViewControllerDelegate();
-    final PlatformWebViewWidgetCreationParams params =
-        PlatformWebViewWidgetCreationParams(controller: controller);
+    final BTPlatformWebViewWidgetCreationParams params =
+        BTPlatformWebViewWidgetCreationParams(controller: controller);
     when(WebViewPlatform.instance!.createPlatformWebViewWidget(params))
         .thenReturn(MockWebViewWidgetDelegate());
 
@@ -76,7 +76,7 @@ class MockWebViewWidgetDelegate extends Mock
         PlatformWebViewWidget {}
 
 class ExtendsWebViewWidgetDelegate extends PlatformWebViewWidget {
-  ExtendsWebViewWidgetDelegate(PlatformWebViewWidgetCreationParams params)
+  ExtendsWebViewWidgetDelegate(BTPlatformWebViewWidgetCreationParams params)
       : super.implementation(params);
 
   @override
