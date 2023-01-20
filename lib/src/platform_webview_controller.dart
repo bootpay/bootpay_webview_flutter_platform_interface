@@ -16,7 +16,7 @@ import 'webview_platform.dart';
 /// changes. Extending this class (using `extends`) ensures that the subclass
 /// will get the default implementation, while platform implementations that
 /// `implements` this interface will be broken by newly added
-/// [PlatformBTWebViewCookieManager] methods.
+/// [BTPlatformWebViewCookieManager] methods.
 abstract class PlatformWebViewController extends PlatformInterface {
   /// Creates a new [PlatformWebViewController]
   factory PlatformWebViewController(

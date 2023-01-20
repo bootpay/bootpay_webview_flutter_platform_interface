@@ -14,10 +14,10 @@ import 'webview_platform.dart';
 /// changes. Extending this class (using `extends`) ensures that the subclass
 /// will get the default implementation, while platform implementations that
 /// `implements` this interface will be broken by newly added
-/// [PlatformBTWebViewCookieManager] methods.
-abstract class PlatformBTWebViewCookieManager extends PlatformInterface {
-  /// Creates a new [PlatformBTWebViewCookieManager]
-  factory PlatformBTWebViewCookieManager(
+/// [BTPlatformWebViewCookieManager] methods.
+abstract class BTPlatformWebViewCookieManager extends PlatformInterface {
+  /// Creates a new [BTPlatformWebViewCookieManager]
+  factory BTPlatformWebViewCookieManager(
       BTPlatformWebViewCookieManagerCreationParams params) {
     assert(
       WebViewPlatform.instance != null,
@@ -26,24 +26,24 @@ abstract class PlatformBTWebViewCookieManager extends PlatformInterface {
       '`WebViewPlatform.instance` before use. For unit testing, '
       '`WebViewPlatform.instance` can be set with your own test implementation.',
     );
-    final PlatformBTWebViewCookieManager cookieManagerDelegate =
+    final BTPlatformWebViewCookieManager cookieManagerDelegate =
         WebViewPlatform.instance!.createPlatformCookieManager(params);
     PlatformInterface.verify(cookieManagerDelegate, _token);
     return cookieManagerDelegate;
   }
 
   /// Used by the platform implementation to create a new
-  /// [PlatformBTWebViewCookieManager].
+  /// [BTPlatformWebViewCookieManager].
   ///
   /// Should only be used by platform implementations because they can't extend
   /// a class that only contains a factory constructor.
   @protected
-  PlatformBTWebViewCookieManager.implementation(this.params)
+  BTPlatformWebViewCookieManager.implementation(this.params)
       : super(token: _token);
 
   static final Object _token = Object();
 
-  /// The parameters used to initialize the [PlatformBTWebViewCookieManager].
+  /// The parameters used to initialize the [BTPlatformWebViewCookieManager].
   final BTPlatformWebViewCookieManagerCreationParams params;
 
   /// Clears all cookies for all [WebView] instances.

@@ -36,11 +36,11 @@ abstract class WebViewPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  /// Creates a new [PlatformBTWebViewCookieManager].
+  /// Creates a new [BTPlatformWebViewCookieManager].
   ///
   /// This function should only be called by the app-facing package.
   /// Look at using [BTWebViewCookieManager] in `webview_flutter` instead.
-  PlatformBTWebViewCookieManager createPlatformCookieManager(
+  BTPlatformWebViewCookieManager createPlatformCookieManager(
     BTPlatformWebViewCookieManagerCreationParams params,
   ) {
     throw UnimplementedError(

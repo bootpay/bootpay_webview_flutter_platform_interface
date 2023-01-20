@@ -4,7 +4,7 @@
 
 import 'package:flutter/material.dart';
 
-/// Object specifying creation parameters for creating a [PlatformBTWebViewCookieManager].
+/// Object specifying creation parameters for creating a [BTPlatformWebViewCookieManager].
 ///
 /// Platform specific implementations can add additional fields by extending
 /// this class.
@@ -19,16 +19,16 @@ import 'package:flutter/material.dart';
 ///
 /// ```dart
 /// class WKBTWebViewCookieManagerCreationParams
-///     extends PlatformBTWebViewCookieManagerCreationParams {
+///     extends BTPlatformWebViewCookieManagerCreationParams {
 ///   WKBTWebViewCookieManagerCreationParams._(
 ///     // This parameter prevents breaking changes later.
 ///     // ignore: avoid_unused_constructor_parameters
-///     PlatformBTWebViewCookieManagerCreationParams params, {
+///     BTPlatformWebViewCookieManagerCreationParams params, {
 ///     this.uri,
 ///   }) : super();
 ///
-///   factory WKBTWebViewCookieManagerCreationParams.fromPlatformBTWebViewCookieManagerCreationParams(
-///     PlatformBTWebViewCookieManagerCreationParams params, {
+///   factory WKBTWebViewCookieManagerCreationParams.fromBTPlatformWebViewCookieManagerCreationParams(
+///     BTPlatformWebViewCookieManagerCreationParams params, {
 ///     Uri? uri,
 ///   }) {
 ///     return WKBTWebViewCookieManagerCreationParams._(params, uri: uri);
@@ -40,6 +40,6 @@ import 'package:flutter/material.dart';
 /// {@end-tool}
 @immutable
 class BTPlatformWebViewCookieManagerCreationParams {
-  /// Used by the platform implementation to create a new [PlatformBTWebViewCookieManagerDelegate].
+  /// Used by the platform implementation to create a new [BTPlatformWebViewCookieManagerDelegate].
   const BTPlatformWebViewCookieManagerCreationParams();
 }

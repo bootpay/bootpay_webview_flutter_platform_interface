@@ -51,7 +51,7 @@ void main() {
     );
 
     expect(
-      () => PlatformBTWebViewCookieManager(
+      () => BTPlatformWebViewCookieManager(
         const BTPlatformWebViewCookieManagerCreationParams(),
       ),
       throwsA(isA<AssertionError>().having(

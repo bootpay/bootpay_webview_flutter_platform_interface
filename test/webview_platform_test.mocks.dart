@@ -27,9 +27,9 @@ import 'package:bootpay_webview_flutter_platform_interface/src/webview_platform.
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakePlatformBTWebViewCookieManager_0 extends _i1.SmartFake
-    implements _i2.PlatformBTWebViewCookieManager {
-  _FakePlatformBTWebViewCookieManager_0(
+class _FakeBTPlatformWebViewCookieManager_0 extends _i1.SmartFake
+    implements _i2.BTPlatformWebViewCookieManager {
+  _FakeBTPlatformWebViewCookieManager_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -80,21 +80,21 @@ class MockWebViewPlatform extends _i1.Mock implements _i6.WebViewPlatform {
   }
 
   @override
-  _i2.PlatformBTWebViewCookieManager createPlatformCookieManager(
+  _i2.BTPlatformWebViewCookieManager createPlatformCookieManager(
           _i7.BTPlatformWebViewCookieManagerCreationParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #createPlatformCookieManager,
           [params],
         ),
-        returnValue: _FakePlatformBTWebViewCookieManager_0(
+        returnValue: _FakeBTPlatformWebViewCookieManager_0(
           this,
           Invocation.method(
             #createPlatformCookieManager,
             [params],
           ),
         ),
-      ) as _i2.PlatformBTWebViewCookieManager);
+      ) as _i2.BTPlatformWebViewCookieManager);
   @override
   _i3.PlatformNavigationDelegate createPlatformNavigationDelegate(
           _i7.BTPlatformNavigationDelegateCreationParams? params) =>
