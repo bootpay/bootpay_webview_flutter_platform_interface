@@ -1,3 +1,8 @@
+## 2.0.1
+* clone version 2.0.1
+* Improves error message when a platform interface class is used before `WebViewPlatform.instance` has been set.
+* 새롭게 커스터마이즈 
+
 ## 1.9.51
 * rename package
 
