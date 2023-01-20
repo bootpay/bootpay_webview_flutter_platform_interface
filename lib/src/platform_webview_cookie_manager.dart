@@ -18,7 +18,7 @@ import 'webview_platform.dart';
 abstract class PlatformBTWebViewCookieManager extends PlatformInterface {
   /// Creates a new [PlatformBTWebViewCookieManager]
   factory PlatformBTWebViewCookieManager(
-      BTPlatformBTWebViewCookieManagerCreationParams params) {
+      BTPlatformWebViewCookieManagerCreationParams params) {
     assert(
       WebViewPlatform.instance != null,
       'A platform implementation for `webview_flutter` has not been set. Please '
@@ -44,7 +44,7 @@ abstract class PlatformBTWebViewCookieManager extends PlatformInterface {
   static final Object _token = Object();
 
   /// The parameters used to initialize the [PlatformBTWebViewCookieManager].
-  final BTPlatformBTWebViewCookieManagerCreationParams params;
+  final BTPlatformWebViewCookieManagerCreationParams params;
 
   /// Clears all cookies for all [WebView] instances.
   ///

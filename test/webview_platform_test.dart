@@ -52,7 +52,7 @@ void main() {
 
     expect(
       () => PlatformBTWebViewCookieManager(
-        const BTPlatformBTWebViewCookieManagerCreationParams(),
+        const BTPlatformWebViewCookieManagerCreationParams(),
       ),
       throwsA(isA<AssertionError>().having(
         (AssertionError error) => error.message,
@@ -111,7 +111,7 @@ void main() {
 
     expect(
       () => webViewPlatform.createPlatformCookieManager(
-          const BTPlatformBTWebViewCookieManagerCreationParams()),
+          const BTPlatformWebViewCookieManagerCreationParams()),
       throwsUnimplementedError,
     );
   });

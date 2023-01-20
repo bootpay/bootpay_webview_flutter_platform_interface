@@ -81,7 +81,7 @@ class MockWebViewPlatform extends _i1.Mock implements _i6.WebViewPlatform {
 
   @override
   _i2.PlatformBTWebViewCookieManager createPlatformCookieManager(
-          _i7.BTPlatformBTWebViewCookieManagerCreationParams? params) =>
+          _i7.BTPlatformWebViewCookieManagerCreationParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #createPlatformCookieManager,

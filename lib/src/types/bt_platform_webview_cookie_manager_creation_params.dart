@@ -10,10 +10,10 @@ import 'package:flutter/material.dart';
 /// this class.
 ///
 /// {@tool sample}
-/// This example demonstrates how to extend the [BTPlatformBTWebViewCookieManagerCreationParams] to
+/// This example demonstrates how to extend the [BTPlatformWebViewCookieManagerCreationParams] to
 /// provide additional platform specific parameters.
 ///
-/// When extending [BTPlatformBTWebViewCookieManagerCreationParams] additional
+/// When extending [BTPlatformWebViewCookieManagerCreationParams] additional
 /// parameters should always accept `null` or have a default value to prevent
 /// breaking changes.
 ///
@@ -39,7 +39,7 @@ import 'package:flutter/material.dart';
 /// ```
 /// {@end-tool}
 @immutable
-class BTPlatformBTWebViewCookieManagerCreationParams {
+class BTPlatformWebViewCookieManagerCreationParams {
   /// Used by the platform implementation to create a new [PlatformBTWebViewCookieManagerDelegate].
-  const BTPlatformBTWebViewCookieManagerCreationParams();
+  const BTPlatformWebViewCookieManagerCreationParams();
 }

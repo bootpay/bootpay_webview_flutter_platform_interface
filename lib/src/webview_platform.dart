@@ -41,7 +41,7 @@ abstract class WebViewPlatform extends PlatformInterface {
   /// This function should only be called by the app-facing package.
   /// Look at using [BTWebViewCookieManager] in `webview_flutter` instead.
   PlatformBTWebViewCookieManager createPlatformCookieManager(
-    BTPlatformBTWebViewCookieManagerCreationParams params,
+    BTPlatformWebViewCookieManagerCreationParams params,
   ) {
     throw UnimplementedError(
         'createPlatformCookieManager is not implemented on the current platform.');
