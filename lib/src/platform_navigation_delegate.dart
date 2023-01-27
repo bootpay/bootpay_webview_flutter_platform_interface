@@ -20,7 +20,7 @@ typedef PageEventCallback = void Function(String url);
 typedef ProgressCallback = void Function(int progress);
 
 /// Signature for callbacks that report a resource loading error.
-typedef WebResourceErrorCallback = void Function(BTWebResourceError error);
+typedef WebResourceErrorCallback = void Function(WebResourceError error);
 
 /// An interface defining navigation events that occur on the native platform.
 ///
@@ -30,7 +30,7 @@ typedef WebResourceErrorCallback = void Function(BTWebResourceError error);
 abstract class PlatformNavigationDelegate extends PlatformInterface {
   /// Creates a new [PlatformNavigationDelegate]
   factory PlatformNavigationDelegate(
-      BTPlatformNavigationDelegateCreationParams params) {
+      PlatformNavigationDelegateCreationParams params) {
     assert(
       WebViewPlatform.instance != null,
       'A platform implementation for `webview_flutter` has not been set. Please '
@@ -54,7 +54,7 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   static final Object _token = Object();
 
   /// The parameters used to initialize the [PlatformNavigationDelegate].
-  final BTPlatformNavigationDelegateCreationParams params;
+  final PlatformNavigationDelegateCreationParams params;
 
   /// Invoked when a navigation request is pending.
   ///

@@ -14,16 +14,16 @@ import '../platform_webview_controller.dart';
 /// this class.
 ///
 /// {@tool sample}
-/// This example demonstrates how to extend the [BTBTPlatformWebViewWidgetCreationParams] to
+/// This example demonstrates how to extend the [PlatformWebViewWidgetCreationParams] to
 /// provide additional platform specific parameters.
 ///
-/// When extending [BTPlatformWebViewWidgetCreationParams] additional parameters
+/// When extending [PlatformWebViewWidgetCreationParams] additional parameters
 /// should always accept `null` or have a default value to prevent breaking
 /// changes.
 ///
 /// ```dart
 /// class AndroidWebViewWidgetCreationParams
-///     extends BTPlatformWebViewWidgetCreationParams {
+///     extends PlatformWebViewWidgetCreationParams {
 ///   AndroidWebViewWidgetCreationParams({
 ///     super.key,
 ///     super.layoutDirection,
@@ -31,8 +31,8 @@ import '../platform_webview_controller.dart';
 ///     this.platformSpecificFieldExample,
 ///   });
 ///
-///   WKWebViewWidgetCreationParams.fromBTPlatformWebViewWidgetCreationParams(
-///     BTPlatformWebViewWidgetCreationParams params, {
+///   WKWebViewWidgetCreationParams.fromPlatformWebViewWidgetCreationParams(
+///     PlatformWebViewWidgetCreationParams params, {
 ///     Object? platformSpecificFieldExample,
 ///   }) : this(
 ///           key: params.key,
@@ -46,9 +46,9 @@ import '../platform_webview_controller.dart';
 /// ```
 /// {@end-tool}
 @immutable
-class BTPlatformWebViewWidgetCreationParams {
+class PlatformWebViewWidgetCreationParams {
   /// Used by the platform implementation to create a new [PlatformWebViewWidget].
-  const BTPlatformWebViewWidgetCreationParams({
+  const PlatformWebViewWidgetCreationParams({
     this.key,
     required this.controller,
     this.layoutDirection = TextDirection.ltr,

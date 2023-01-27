@@ -12,21 +12,21 @@ import '../types/webview_cookie.dart';
 /// does not consider newly added methods to be breaking changes. Extending this class
 /// (using `extends`) ensures that the subclass will get the default implementation, while
 /// platform implementations that `implements` this interface will be broken by newly added
-/// [BTWebViewCookieManagerPlatform] methods.
-abstract class BTWebViewCookieManagerPlatform extends PlatformInterface {
-  /// Constructs a BTWebViewCookieManagerPlatform.
-  BTWebViewCookieManagerPlatform() : super(token: _token);
+/// [WebViewCookieManagerPlatform] methods.
+abstract class WebViewCookieManagerPlatform extends PlatformInterface {
+  /// Constructs a WebViewCookieManagerPlatform.
+  WebViewCookieManagerPlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static BTWebViewCookieManagerPlatform? _instance;
+  static WebViewCookieManagerPlatform? _instance;
 
-  /// The instance of [BTWebViewCookieManagerPlatform] to use.
-  static BTWebViewCookieManagerPlatform? get instance => _instance;
+  /// The instance of [WebViewCookieManagerPlatform] to use.
+  static WebViewCookieManagerPlatform? get instance => _instance;
 
   /// Platform-specific plugins should set this with their own platform-specific
-  /// class that extends [BTWebViewCookieManagerPlatform] when they register themselves.
-  static set instance(BTWebViewCookieManagerPlatform? instance) {
+  /// class that extends [WebViewCookieManagerPlatform] when they register themselves.
+  static set instance(WebViewCookieManagerPlatform? instance) {
     if (instance == null) {
       throw AssertionError(
           'Platform interfaces can only be set to a non-null instance');

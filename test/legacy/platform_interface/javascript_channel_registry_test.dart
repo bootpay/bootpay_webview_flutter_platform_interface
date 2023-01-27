@@ -10,17 +10,17 @@ void main() {
   final Set<JavascriptChannel> channels = <JavascriptChannel>{
     JavascriptChannel(
       name: 'js_channel_1',
-      onMessageReceived: (BTJavaScriptMessage message) =>
+      onMessageReceived: (JavascriptMessage message) =>
           log['js_channel_1'] = message.message,
     ),
     JavascriptChannel(
       name: 'js_channel_2',
-      onMessageReceived: (BTJavaScriptMessage message) =>
+      onMessageReceived: (JavascriptMessage message) =>
           log['js_channel_2'] = message.message,
     ),
     JavascriptChannel(
       name: 'js_channel_3',
-      onMessageReceived: (BTJavaScriptMessage message) =>
+      onMessageReceived: (JavascriptMessage message) =>
           log['js_channel_3'] = message.message,
     ),
   };
@@ -97,12 +97,12 @@ void main() {
     final Set<JavascriptChannel> newChannels = <JavascriptChannel>{
       JavascriptChannel(
         name: 'new_js_channel_1',
-        onMessageReceived: (BTJavaScriptMessage message) =>
+        onMessageReceived: (JavascriptMessage message) =>
             log['new_js_channel_1'] = message.message,
       ),
       JavascriptChannel(
         name: 'new_js_channel_2',
-        onMessageReceived: (BTJavaScriptMessage message) =>
+        onMessageReceived: (JavascriptMessage message) =>
             log['new_js_channel_2'] = message.message,
       ),
     };

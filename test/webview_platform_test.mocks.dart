@@ -27,9 +27,9 @@ import 'package:bootpay_webview_flutter_platform_interface/src/webview_platform.
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-class _FakeBTPlatformWebViewCookieManager_0 extends _i1.SmartFake
-    implements _i2.BTPlatformWebViewCookieManager {
-  _FakeBTPlatformWebViewCookieManager_0(
+class _FakePlatformWebViewCookieManager_0 extends _i1.SmartFake
+    implements _i2.PlatformWebViewCookieManager {
+  _FakePlatformWebViewCookieManager_0(
     Object parent,
     Invocation parentInvocation,
   ) : super(
@@ -80,24 +80,24 @@ class MockWebViewPlatform extends _i1.Mock implements _i6.WebViewPlatform {
   }
 
   @override
-  _i2.BTPlatformWebViewCookieManager createPlatformCookieManager(
-          _i7.BTPlatformWebViewCookieManagerCreationParams? params) =>
+  _i2.PlatformWebViewCookieManager createPlatformCookieManager(
+          _i7.PlatformWebViewCookieManagerCreationParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #createPlatformCookieManager,
           [params],
         ),
-        returnValue: _FakeBTPlatformWebViewCookieManager_0(
+        returnValue: _FakePlatformWebViewCookieManager_0(
           this,
           Invocation.method(
             #createPlatformCookieManager,
             [params],
           ),
         ),
-      ) as _i2.BTPlatformWebViewCookieManager);
+      ) as _i2.PlatformWebViewCookieManager);
   @override
   _i3.PlatformNavigationDelegate createPlatformNavigationDelegate(
-          _i7.BTPlatformNavigationDelegateCreationParams? params) =>
+          _i7.PlatformNavigationDelegateCreationParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #createPlatformNavigationDelegate,
@@ -113,7 +113,7 @@ class MockWebViewPlatform extends _i1.Mock implements _i6.WebViewPlatform {
       ) as _i3.PlatformNavigationDelegate);
   @override
   _i4.PlatformWebViewController createPlatformWebViewController(
-          _i7.BTPlatformWebViewControllerCreationParams? params) =>
+          _i7.PlatformWebViewControllerCreationParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #createPlatformWebViewController,
@@ -129,7 +129,7 @@ class MockWebViewPlatform extends _i1.Mock implements _i6.WebViewPlatform {
       ) as _i4.PlatformWebViewController);
   @override
   _i5.PlatformWebViewWidget createPlatformWebViewWidget(
-          _i7.BTPlatformWebViewWidgetCreationParams? params) =>
+          _i7.PlatformWebViewWidgetCreationParams? params) =>
       (super.noSuchMethod(
         Invocation.method(
           #createPlatformWebViewWidget,

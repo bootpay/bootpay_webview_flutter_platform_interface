@@ -10,24 +10,24 @@ import 'package:flutter/material.dart';
 /// this class.
 ///
 /// {@tool sample}
-/// This example demonstrates how to extend the [BTPlatformNavigationDelegateCreationParams] to
+/// This example demonstrates how to extend the [PlatformNavigationDelegateCreationParams] to
 /// provide additional platform specific parameters.
 ///
-/// When extending [BTPlatformNavigationDelegateCreationParams] additional
+/// When extending [PlatformNavigationDelegateCreationParams] additional
 /// parameters should always accept `null` or have a default value to prevent
 /// breaking changes.
 ///
 /// ```dart
-/// class AndroidNavigationDelegateCreationParams extends BTPlatformNavigationDelegateCreationParams {
+/// class AndroidNavigationDelegateCreationParams extends PlatformNavigationDelegateCreationParams {
 ///   AndroidNavigationDelegateCreationParams._(
 ///     // This parameter prevents breaking changes later.
 ///     // ignore: avoid_unused_constructor_parameters
-///     BTPlatformNavigationDelegateCreationParams params, {
+///     PlatformNavigationDelegateCreationParams params, {
 ///     this.filter,
 ///   }) : super();
 ///
-///   factory AndroidNavigationDelegateCreationParams.fromBTPlatformNavigationDelegateCreationParams(
-///       BTPlatformNavigationDelegateCreationParams params, {
+///   factory AndroidNavigationDelegateCreationParams.fromPlatformNavigationDelegateCreationParams(
+///       PlatformNavigationDelegateCreationParams params, {
 ///       String? filter,
 ///   }) {
 ///     return AndroidNavigationDelegateCreationParams._(params, filter: filter);
@@ -38,7 +38,7 @@ import 'package:flutter/material.dart';
 /// ```
 /// {@end-tool}
 @immutable
-class BTPlatformNavigationDelegateCreationParams {
+class PlatformNavigationDelegateCreationParams {
   /// Used by the platform implementation to create a new [PlatformNavigationkDelegate].
-  const BTPlatformNavigationDelegateCreationParams();
+  const PlatformNavigationDelegateCreationParams();
 }

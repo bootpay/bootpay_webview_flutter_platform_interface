@@ -10,25 +10,25 @@ import 'package:flutter/material.dart';
 /// this class.
 ///
 /// {@tool sample}
-/// This example demonstrates how to extend the [BTPlatformWebViewControllerCreationParams] to
+/// This example demonstrates how to extend the [PlatformWebViewControllerCreationParams] to
 /// provide additional platform specific parameters.
 ///
-/// When extending [BTPlatformWebViewControllerCreationParams] additional parameters
+/// When extending [PlatformWebViewControllerCreationParams] additional parameters
 /// should always accept `null` or have a default value to prevent breaking
 /// changes.
 ///
 /// ```dart
 /// class WKWebViewControllerCreationParams
-///     extends BTPlatformWebViewControllerCreationParams {
+///     extends PlatformWebViewControllerCreationParams {
 ///   WKWebViewControllerCreationParams._(
 ///     // This parameter prevents breaking changes later.
 ///     // ignore: avoid_unused_constructor_parameters
-///     BTPlatformWebViewControllerCreationParams params, {
+///     PlatformWebViewControllerCreationParams params, {
 ///     this.domain,
 ///   }) : super();
 ///
-///   factory WKWebViewControllerCreationParams.fromBTPlatformWebViewControllerCreationParams(
-///     BTPlatformWebViewControllerCreationParams params, {
+///   factory WKWebViewControllerCreationParams.fromPlatformWebViewControllerCreationParams(
+///     PlatformWebViewControllerCreationParams params, {
 ///     String? domain,
 ///   }) {
 ///     return WKWebViewControllerCreationParams._(params, domain: domain);
@@ -39,7 +39,7 @@ import 'package:flutter/material.dart';
 /// ```
 /// {@end-tool}
 @immutable
-class BTPlatformWebViewControllerCreationParams {
+class PlatformWebViewControllerCreationParams {
   /// Used by the platform implementation to create a new [PlatformWebViewController].
-  const BTPlatformWebViewControllerCreationParams();
+  const PlatformWebViewControllerCreationParams();
 }

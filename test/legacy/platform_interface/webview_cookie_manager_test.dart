@@ -6,10 +6,10 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:bootpay_webview_flutter_platform_interface/src/webview_flutter_platform_interface_legacy.dart';
 
 void main() {
-  BTWebViewCookieManagerPlatform? cookieManager;
+  WebViewCookieManagerPlatform? cookieManager;
 
   setUp(() {
-    cookieManager = TestBTWebViewCookieManagerPlatform();
+    cookieManager = TestWebViewCookieManagerPlatform();
   });
 
   test('clearCookies should throw UnimplementedError', () {
@@ -23,4 +23,4 @@ void main() {
   });
 }
 
-class TestBTWebViewCookieManagerPlatform extends BTWebViewCookieManagerPlatform {}
+class TestWebViewCookieManagerPlatform extends WebViewCookieManagerPlatform {}

@@ -25,7 +25,7 @@ void main() {
 
     expect(() {
       PlatformWebViewController(
-          const BTPlatformWebViewControllerCreationParams());
+          const PlatformWebViewControllerCreationParams());
       // In versions of `package:plugin_platform_interface` prior to fixing
       // https://github.com/flutter/flutter/issues/109339, an attempt to
       // implement a platform interface using `implements` would sometimes throw
@@ -37,8 +37,8 @@ void main() {
   });
 
   test('Can be extended', () {
-    const BTPlatformWebViewControllerCreationParams params =
-        BTPlatformWebViewControllerCreationParams();
+    const PlatformWebViewControllerCreationParams params =
+        PlatformWebViewControllerCreationParams();
     when((WebViewPlatform.instance! as MockWebViewPlatform)
             .createPlatformWebViewController(any))
         .thenReturn(ExtendsPlatformWebViewController(params));
@@ -53,7 +53,7 @@ void main() {
 
     expect(
         PlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams()),
+            const PlatformWebViewControllerCreationParams()),
         isNotNull);
   });
 
@@ -63,7 +63,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.loadFile(''),
@@ -77,7 +77,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.loadFlutterAsset(''),
@@ -91,7 +91,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.loadHtmlString(''),
@@ -105,10 +105,10 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
-      () => controller.loadRequest(MockBTLoadRequestParamsDelegate()),
+      () => controller.loadRequest(MockLoadRequestParamsDelegate()),
       throwsUnimplementedError,
     );
   });
@@ -119,7 +119,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.currentUrl(),
@@ -133,7 +133,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.canGoBack(),
@@ -147,7 +147,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.canGoForward(),
@@ -160,7 +160,7 @@ void main() {
       'Default implementation of goBack should throw unimplemented error', () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.goBack(),
@@ -174,7 +174,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.goForward(),
@@ -187,7 +187,7 @@ void main() {
       'Default implementation of reload should throw unimplemented error', () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.reload(),
@@ -201,7 +201,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.clearCache(),
@@ -215,7 +215,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.clearLocalStorage(),
@@ -228,7 +228,7 @@ void main() {
     () {
       final PlatformWebViewController controller =
           ExtendsPlatformWebViewController(
-              const BTPlatformWebViewControllerCreationParams());
+              const PlatformWebViewControllerCreationParams());
 
       expect(
         () =>
@@ -244,7 +244,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.runJavaScript('javaScript'),
@@ -258,7 +258,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.runJavaScriptReturningResult('javaScript'),
@@ -272,11 +272,11 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.addJavaScriptChannel(
-        BTJavaScriptChannelParams(
+        JavaScriptChannelParams(
           name: 'test',
           onMessageReceived: (_) {},
         ),
@@ -291,7 +291,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.removeJavaScriptChannel('test'),
@@ -305,7 +305,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.getTitle(),
@@ -319,7 +319,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.scrollTo(0, 0),
@@ -333,7 +333,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.scrollBy(0, 0),
@@ -347,7 +347,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.getScrollPosition(),
@@ -361,7 +361,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.enableZoom(true),
@@ -375,7 +375,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.setBackgroundColor(Colors.blue),
@@ -389,7 +389,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.setJavaScriptMode(JavaScriptMode.disabled),
@@ -403,7 +403,7 @@ void main() {
       () {
     final PlatformWebViewController controller =
         ExtendsPlatformWebViewController(
-            const BTPlatformWebViewControllerCreationParams());
+            const PlatformWebViewControllerCreationParams());
 
     expect(
       () => controller.setUserAgent(null),
@@ -431,14 +431,14 @@ class MockWebViewControllerDelegate extends Mock
 
 class ExtendsPlatformWebViewController extends PlatformWebViewController {
   ExtendsPlatformWebViewController(
-      BTPlatformWebViewControllerCreationParams params)
+      PlatformWebViewControllerCreationParams params)
       : super.implementation(params);
 }
 
 // ignore: must_be_immutable
-class MockBTLoadRequestParamsDelegate extends Mock
+class MockLoadRequestParamsDelegate extends Mock
     with
         //ignore: prefer_mixin
         MockPlatformInterfaceMixin
     implements
-        BTLoadRequestParams {}
+        LoadRequestParams {}

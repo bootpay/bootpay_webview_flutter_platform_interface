@@ -3,7 +3,7 @@
 // found in the LICENSE file.
 
 /// A cookie that can be set globally for all web views
-/// using [BTWebViewCookieManagerPlatform].
+/// using [WebViewCookieManagerPlatform].
 class WebViewCookie {
   /// Constructs a new [WebViewCookie].
   const WebViewCookie(
@@ -37,7 +37,7 @@ class WebViewCookie {
   /// https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-rfc6265bis-02#section-4.1.1
   final String path;
 
-  /// Serializes the [BTWebViewCookie] to a Map<String, String>.
+  /// Serializes the [WebViewCookie] to a Map<String, String>.
   Map<String, String> toJson() {
     return <String, String>{
       'name': name,

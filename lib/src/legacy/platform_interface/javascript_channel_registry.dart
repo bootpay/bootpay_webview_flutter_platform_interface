@@ -25,7 +25,7 @@ class JavascriptChannelRegistry {
       throw ArgumentError('No channel registered with name $channel.');
     }
 
-    javascriptChannel.onMessageReceived(BTJavaScriptMessage(message));
+    javascriptChannel.onMessageReceived(JavascriptMessage(message));
   }
 
   /// Updates the set of [JavascriptChannel]s with the new set.

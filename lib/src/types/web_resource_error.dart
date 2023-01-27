@@ -73,10 +73,10 @@ enum WebResourceErrorType {
 /// this class.
 ///
 /// {@tool sample}
-/// This example demonstrates how to extend the [BTWebResourceError] to
+/// This example demonstrates how to extend the [WebResourceError] to
 /// provide additional platform specific parameters.
 ///
-/// When extending [BTWebResourceError] additional parameters should always
+/// When extending [WebResourceError] additional parameters should always
 /// accept `null` or have a default value to prevent breaking changes.
 ///
 /// ```dart
@@ -100,9 +100,9 @@ enum WebResourceErrorType {
 /// ```
 /// {@end-tool}
 @immutable
-class BTWebResourceError {
-  /// Used by the platform implementation to create a new [BTWebResourceError].
-  const BTWebResourceError({
+class WebResourceError {
+  /// Used by the platform implementation to create a new [WebResourceError].
+  const WebResourceError({
     required this.errorCode,
     required this.description,
     this.errorType,

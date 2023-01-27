@@ -16,11 +16,11 @@ import 'webview_platform.dart';
 /// changes. Extending this class (using `extends`) ensures that the subclass
 /// will get the default implementation, while platform implementations that
 /// `implements` this interface will be broken by newly added
-/// [BTPlatformWebViewCookieManager] methods.
+/// [PlatformWebViewCookieManager] methods.
 abstract class PlatformWebViewController extends PlatformInterface {
   /// Creates a new [PlatformWebViewController]
   factory PlatformWebViewController(
-      BTPlatformWebViewControllerCreationParams params) {
+      PlatformWebViewControllerCreationParams params) {
     assert(
       WebViewPlatform.instance != null,
       'A platform implementation for `webview_flutter` has not been set. Please '
@@ -44,7 +44,7 @@ abstract class PlatformWebViewController extends PlatformInterface {
   static final Object _token = Object();
 
   /// The parameters used to initialize the [PlatformWebViewController].
-  final BTPlatformWebViewControllerCreationParams params;
+  final PlatformWebViewControllerCreationParams params;
 
   /// Loads the file located on the specified [absoluteFilePath].
   ///
@@ -96,7 +96,7 @@ abstract class PlatformWebViewController extends PlatformInterface {
   ///
   /// Throws an ArgumentError if [WebViewRequest.uri] has empty scheme.
   Future<void> loadRequest(
-    BTLoadRequestParams params,
+    LoadRequestParams params,
   ) {
     throw UnimplementedError(
         'loadRequest is not implemented on the current platform');
@@ -190,7 +190,7 @@ abstract class PlatformWebViewController extends PlatformInterface {
 
   /// Adds a new JavaScript channel to the set of enabled channels.
   Future<void> addJavaScriptChannel(
-    BTJavaScriptChannelParams BTJavaScriptChannelParams,
+    JavaScriptChannelParams javaScriptChannelParams,
   ) {
     throw UnimplementedError(
         'addJavaScriptChannel is not implemented on the current platform');
@@ -263,9 +263,9 @@ abstract class PlatformWebViewController extends PlatformInterface {
 
 /// Describes the parameters necessary for registering a JavaScript channel.
 @immutable
-class BTJavaScriptChannelParams {
-  /// Creates a new [BTJavaScriptChannelParams] object.
-  const BTJavaScriptChannelParams({
+class JavaScriptChannelParams {
+  /// Creates a new [JavaScriptChannelParams] object.
+  const JavaScriptChannelParams({
     required this.name,
     required this.onMessageReceived,
   });
@@ -273,7 +273,7 @@ class BTJavaScriptChannelParams {
   /// The name that identifies the JavaScript channel.
   final String name;
 
-  /// The callback method that is invoked when a [BTJavaScriptMessage] is
+  /// The callback method that is invoked when a [JavaScriptMessage] is
   /// received.
-  final void Function(BTJavaScriptMessage) onMessageReceived;
+  final void Function(JavaScriptMessage) onMessageReceived;
 }
