@@ -5,7 +5,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'webview_platform.dart';
+import 'types/types.dart';
+import 'webview_platform.dart' show WebViewPlatform;
 
 /// Interface for a platform implementation of a cookie manager.
 ///
@@ -20,14 +21,14 @@ abstract class PlatformWebViewCookieManager extends PlatformInterface {
   factory PlatformWebViewCookieManager(
       PlatformWebViewCookieManagerCreationParams params) {
     assert(
-      WebViewPlatform.instance != null,
-      'A platform implementation for `webview_flutter` has not been set. Please '
-      'ensure that an implementation of `WebViewPlatform` has been set to '
-      '`WebViewPlatform.instance` before use. For unit testing, '
-      '`WebViewPlatform.instance` can be set with your own test implementation.',
+    WebViewPlatform.instance != null,
+    'A platform implementation for `webview_flutter` has not been set. Please '
+        'ensure that an implementation of `WebViewPlatform` has been set to '
+        '`WebViewPlatform.instance` before use. For unit testing, '
+        '`WebViewPlatform.instance` can be set with your own test implementation.',
     );
     final PlatformWebViewCookieManager cookieManagerDelegate =
-        WebViewPlatform.instance!.createPlatformCookieManager(params);
+    WebViewPlatform.instance!.createPlatformCookieManager(params);
     PlatformInterface.verify(cookieManagerDelegate, _token);
     return cookieManagerDelegate;
   }

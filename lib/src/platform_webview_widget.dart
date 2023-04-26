@@ -5,21 +5,22 @@
 import 'package:flutter/widgets.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'webview_platform.dart';
+import 'types/types.dart';
+import 'webview_platform.dart' show WebViewPlatform;
 
 /// Interface for a platform implementation of a web view widget.
 abstract class PlatformWebViewWidget extends PlatformInterface {
   /// Creates a new [PlatformWebViewWidget]
   factory PlatformWebViewWidget(PlatformWebViewWidgetCreationParams params) {
     assert(
-      WebViewPlatform.instance != null,
-      'A platform implementation for `webview_flutter` has not been set. Please '
-      'ensure that an implementation of `WebViewPlatform` has been set to '
-      '`WebViewPlatform.instance` before use. For unit testing, '
-      '`WebViewPlatform.instance` can be set with your own test implementation.',
+    WebViewPlatform.instance != null,
+    'A platform implementation for `webview_flutter` has not been set. Please '
+        'ensure that an implementation of `WebViewPlatform` has been set to '
+        '`WebViewPlatform.instance` before use. For unit testing, '
+        '`WebViewPlatform.instance` can be set with your own test implementation.',
     );
     final PlatformWebViewWidget webViewWidgetDelegate =
-        WebViewPlatform.instance!.createPlatformWebViewWidget(params);
+    WebViewPlatform.instance!.createPlatformWebViewWidget(params);
     PlatformInterface.verify(webViewWidgetDelegate, _token);
     return webViewWidgetDelegate;
   }

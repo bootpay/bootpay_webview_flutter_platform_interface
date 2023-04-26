@@ -6,8 +6,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/painting.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import '../../src/platform_navigation_delegate.dart';
-import 'webview_platform.dart';
+import 'platform_navigation_delegate.dart';
+import 'types/types.dart';
+import 'webview_platform.dart' show WebViewPlatform;
 
 /// Interface for a platform implementation of a web view controller.
 ///
@@ -22,14 +23,14 @@ abstract class PlatformWebViewController extends PlatformInterface {
   factory PlatformWebViewController(
       PlatformWebViewControllerCreationParams params) {
     assert(
-      WebViewPlatform.instance != null,
-      'A platform implementation for `webview_flutter` has not been set. Please '
-      'ensure that an implementation of `WebViewPlatform` has been set to '
-      '`WebViewPlatform.instance` before use. For unit testing, '
-      '`WebViewPlatform.instance` can be set with your own test implementation.',
+    WebViewPlatform.instance != null,
+    'A platform implementation for `webview_flutter` has not been set. Please '
+        'ensure that an implementation of `WebViewPlatform` has been set to '
+        '`WebViewPlatform.instance` before use. For unit testing, '
+        '`WebViewPlatform.instance` can be set with your own test implementation.',
     );
     final PlatformWebViewController webViewControllerDelegate =
-        WebViewPlatform.instance!.createPlatformWebViewController(params);
+    WebViewPlatform.instance!.createPlatformWebViewController(params);
     PlatformInterface.verify(webViewControllerDelegate, _token);
     return webViewControllerDelegate;
   }
@@ -54,8 +55,8 @@ abstract class PlatformWebViewController extends PlatformInterface {
   ///
   /// Throws an ArgumentError if the [absoluteFilePath] does not exist.
   Future<void> loadFile(
-    String absoluteFilePath,
-  ) {
+      String absoluteFilePath,
+      ) {
     throw UnimplementedError(
         'loadFile is not implemented on the current platform');
   }
@@ -65,8 +66,8 @@ abstract class PlatformWebViewController extends PlatformInterface {
   /// Throws an ArgumentError if [key] is not part of the specified assets
   /// in the pubspec.yaml file.
   Future<void> loadFlutterAsset(
-    String key,
-  ) {
+      String key,
+      ) {
     throw UnimplementedError(
         'loadFlutterAsset is not implemented on the current platform');
   }
@@ -76,9 +77,9 @@ abstract class PlatformWebViewController extends PlatformInterface {
   /// The [baseUrl] parameter is used when resolving relative URLs within the
   /// HTML string.
   Future<void> loadHtmlString(
-    String html, {
-    String? baseUrl,
-  }) {
+      String html, {
+        String? baseUrl,
+      }) {
     throw UnimplementedError(
         'loadHtmlString is not implemented on the current platform');
   }
@@ -96,8 +97,8 @@ abstract class PlatformWebViewController extends PlatformInterface {
   ///
   /// Throws an ArgumentError if [WebViewRequest.uri] has empty scheme.
   Future<void> loadRequest(
-    LoadRequestParams params,
-  ) {
+      LoadRequestParams params,
+      ) {
     throw UnimplementedError(
         'loadRequest is not implemented on the current platform');
   }
@@ -190,8 +191,8 @@ abstract class PlatformWebViewController extends PlatformInterface {
 
   /// Adds a new JavaScript channel to the set of enabled channels.
   Future<void> addJavaScriptChannel(
-    JavaScriptChannelParams javaScriptChannelParams,
-  ) {
+      JavaScriptChannelParams javaScriptChannelParams,
+      ) {
     throw UnimplementedError(
         'addJavaScriptChannel is not implemented on the current platform');
   }
@@ -258,6 +259,16 @@ abstract class PlatformWebViewController extends PlatformInterface {
   Future<void> setUserAgent(String? userAgent) {
     throw UnimplementedError(
         'setUserAgent is not implemented on the current platform');
+  }
+
+  /// Sets a callback that notifies the host application that web content is
+  /// requesting permission to access the specified resources.
+  Future<void> setOnPlatformPermissionRequest(
+      void Function(PlatformWebViewPermissionRequest request) onPermissionRequest,
+      ) {
+    throw UnimplementedError(
+      'setOnPermissionRequest is not implemented on the current platform',
+    );
   }
 }
 
