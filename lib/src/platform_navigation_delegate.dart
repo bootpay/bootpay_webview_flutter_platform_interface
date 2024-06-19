@@ -30,6 +30,10 @@ typedef WebResourceErrorCallback = void Function(WebResourceError error);
 /// url of the web view.
 typedef UrlChangeCallback = void Function(UrlChange change);
 
+/// Signature for callbacks that notify the host application of an
+/// authentication request.
+typedef HttpAuthRequestCallback = void Function(HttpAuthRequest request);
+
 /// An interface defining navigation events that occur on the native platform.
 ///
 /// The [PlatformWebViewController] is notifying this delegate on events that
@@ -40,14 +44,14 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   factory PlatformNavigationDelegate(
       PlatformNavigationDelegateCreationParams params) {
     assert(
-    WebViewPlatform.instance != null,
-    'A platform implementation for `webview_flutter` has not been set. Please '
-        'ensure that an implementation of `WebViewPlatform` has been set to '
-        '`WebViewPlatform.instance` before use. For unit testing, '
-        '`WebViewPlatform.instance` can be set with your own test implementation.',
+      WebViewPlatform.instance != null,
+      'A platform implementation for `webview_flutter` has not been set. Please '
+      'ensure that an implementation of `WebViewPlatform` has been set to '
+      '`WebViewPlatform.instance` before use. For unit testing, '
+      '`WebViewPlatform.instance` can be set with your own test implementation.',
     );
     final PlatformNavigationDelegate callbackDelegate =
-    WebViewPlatform.instance!.createPlatformNavigationDelegate(params);
+        WebViewPlatform.instance!.createPlatformNavigationDelegate(params);
     PlatformInterface.verify(callbackDelegate, _token);
     return callbackDelegate;
   }
@@ -68,8 +72,8 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   ///
   /// See [PlatformWebViewController.setPlatformNavigationDelegate].
   Future<void> setOnNavigationRequest(
-      NavigationRequestCallback onNavigationRequest,
-      ) {
+    NavigationRequestCallback onNavigationRequest,
+  ) {
     throw UnimplementedError(
         'setOnNavigationRequest is not implemented on the current platform.');
   }
@@ -78,8 +82,8 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   ///
   /// See [PlatformWebViewController.setPlatformNavigationDelegate].
   Future<void> setOnPageStarted(
-      PageEventCallback onPageStarted,
-      ) {
+    PageEventCallback onPageStarted,
+  ) {
     throw UnimplementedError(
         'setOnPageStarted is not implemented on the current platform.');
   }
@@ -88,8 +92,8 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   ///
   /// See [PlatformWebViewController.setPlatformNavigationDelegate].
   Future<void> setOnPageFinished(
-      PageEventCallback onPageFinished,
-      ) {
+    PageEventCallback onPageFinished,
+  ) {
     throw UnimplementedError(
         'setOnPageFinished is not implemented on the current platform.');
   }
@@ -98,8 +102,8 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   ///
   /// See [PlatformWebViewController.setPlatformNavigationDelegate].
   Future<void> setOnHttpError(
-      HttpResponseErrorCallback onHttpError,
-      ) {
+    HttpResponseErrorCallback onHttpError,
+  ) {
     throw UnimplementedError(
         'setOnHttpError is not implemented on the current platform.');
   }
@@ -108,8 +112,8 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   ///
   /// See [PlatformWebViewController.setPlatformNavigationDelegate].
   Future<void> setOnProgress(
-      ProgressCallback onProgress,
-      ) {
+    ProgressCallback onProgress,
+  ) {
     throw UnimplementedError(
         'setOnProgress is not implemented on the current platform.');
   }
@@ -118,8 +122,8 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   ///
   /// See [PlatformWebViewController.setPlatformNavigationDelegate].
   Future<void> setOnWebResourceError(
-      WebResourceErrorCallback onWebResourceError,
-      ) {
+    WebResourceErrorCallback onWebResourceError,
+  ) {
     throw UnimplementedError(
         'setOnWebResourceError is not implemented on the current platform.');
   }
@@ -130,6 +134,13 @@ abstract class PlatformNavigationDelegate extends PlatformInterface {
   Future<void> setOnUrlChange(UrlChangeCallback onUrlChange) {
     throw UnimplementedError(
       'setOnUrlChange is not implemented on the current platform.',
+    );
+  }
+
+  /// Invoked when the web view is requesting authentication.
+  Future<void> setOnHttpAuthRequest(HttpAuthRequestCallback onHttpAuthRequest) {
+    throw UnimplementedError(
+      'setOnHttpAuthRequest is not implemented on the current platform.',
     );
   }
 }

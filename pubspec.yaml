@@ -4,7 +4,7 @@ repository: https://github.com/bootpay/bootpay_webview_flutter_platform_interfac
 issue_tracker: https://github.com/bootpay/bootpay_webview_flutter_platform_interface/issues
 # NOTE: We strongly prefer non-breaking changes, even at the expense of a
 # less-clean API. See https://flutter.dev/go/platform-interface-breaking-changes
-version: 2.3.0
+version: 2.10.0
 
 environment:
   sdk: ">=2.18.0 <4.0.0"

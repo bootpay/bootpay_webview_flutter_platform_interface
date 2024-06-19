@@ -34,8 +34,8 @@ abstract class WebViewPlatformController {
   ///
   /// Throws an ArgumentError if the [absoluteFilePath] does not exist.
   Future<void> loadFile(
-      String absoluteFilePath,
-      ) {
+    String absoluteFilePath,
+  ) {
     throw UnimplementedError(
         'WebView loadFile is not implemented on the current platform');
   }
@@ -45,8 +45,8 @@ abstract class WebViewPlatformController {
   /// Throws an ArgumentError if [key] is not part of the specified assets
   /// in the pubspec.yaml file.
   Future<void> loadFlutterAsset(
-      String key,
-      ) {
+    String key,
+  ) {
     throw UnimplementedError(
         'WebView loadFlutterAsset is not implemented on the current platform');
   }
@@ -56,9 +56,9 @@ abstract class WebViewPlatformController {
   /// The [baseUrl] parameter is used when resolving relative URLs within the
   /// HTML string.
   Future<void> loadHtmlString(
-      String html, {
-        String? baseUrl,
-      }) {
+    String html, {
+    String? baseUrl,
+  }) {
     throw UnimplementedError(
         'WebView loadHtmlString is not implemented on the current platform');
   }
@@ -72,9 +72,9 @@ abstract class WebViewPlatformController {
   ///
   /// Throws an ArgumentError if `url` is not a valid URL string.
   Future<void> loadUrl(
-      String url,
-      Map<String, String>? headers,
-      ) {
+    String url,
+    Map<String, String>? headers,
+  ) {
     throw UnimplementedError(
         'WebView loadUrl is not implemented on the current platform');
   }
@@ -92,8 +92,8 @@ abstract class WebViewPlatformController {
   ///
   /// Throws an ArgumentError if [WebViewRequest.uri] has empty scheme.
   Future<void> loadRequest(
-      WebViewRequest request,
-      ) {
+    WebViewRequest request,
+  ) {
     throw UnimplementedError(
         'WebView loadRequest is not implemented on the current platform');
   }

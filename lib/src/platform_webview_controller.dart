@@ -17,20 +17,20 @@ import 'webview_platform.dart' show WebViewPlatform;
 /// changes. Extending this class (using `extends`) ensures that the subclass
 /// will get the default implementation, while platform implementations that
 /// `implements` this interface will be broken by newly added
-/// [PlatformWebViewCookieManager] methods.
+/// [PlatformWebViewController] methods.
 abstract class PlatformWebViewController extends PlatformInterface {
   /// Creates a new [PlatformWebViewController]
   factory PlatformWebViewController(
       PlatformWebViewControllerCreationParams params) {
     assert(
-    WebViewPlatform.instance != null,
-    'A platform implementation for `webview_flutter` has not been set. Please '
-        'ensure that an implementation of `WebViewPlatform` has been set to '
-        '`WebViewPlatform.instance` before use. For unit testing, '
-        '`WebViewPlatform.instance` can be set with your own test implementation.',
+      WebViewPlatform.instance != null,
+      'A platform implementation for `webview_flutter` has not been set. Please '
+      'ensure that an implementation of `WebViewPlatform` has been set to '
+      '`WebViewPlatform.instance` before use. For unit testing, '
+      '`WebViewPlatform.instance` can be set with your own test implementation.',
     );
     final PlatformWebViewController webViewControllerDelegate =
-    WebViewPlatform.instance!.createPlatformWebViewController(params);
+        WebViewPlatform.instance!.createPlatformWebViewController(params);
     PlatformInterface.verify(webViewControllerDelegate, _token);
     return webViewControllerDelegate;
   }
@@ -55,8 +55,8 @@ abstract class PlatformWebViewController extends PlatformInterface {
   ///
   /// Throws an ArgumentError if the [absoluteFilePath] does not exist.
   Future<void> loadFile(
-      String absoluteFilePath,
-      ) {
+    String absoluteFilePath,
+  ) {
     throw UnimplementedError(
         'loadFile is not implemented on the current platform');
   }
@@ -66,8 +66,8 @@ abstract class PlatformWebViewController extends PlatformInterface {
   /// Throws an ArgumentError if [key] is not part of the specified assets
   /// in the pubspec.yaml file.
   Future<void> loadFlutterAsset(
-      String key,
-      ) {
+    String key,
+  ) {
     throw UnimplementedError(
         'loadFlutterAsset is not implemented on the current platform');
   }
@@ -77,9 +77,9 @@ abstract class PlatformWebViewController extends PlatformInterface {
   /// The [baseUrl] parameter is used when resolving relative URLs within the
   /// HTML string.
   Future<void> loadHtmlString(
-      String html, {
-        String? baseUrl,
-      }) {
+    String html, {
+    String? baseUrl,
+  }) {
     throw UnimplementedError(
         'loadHtmlString is not implemented on the current platform');
   }
@@ -97,8 +97,8 @@ abstract class PlatformWebViewController extends PlatformInterface {
   ///
   /// Throws an ArgumentError if [WebViewRequest.uri] has empty scheme.
   Future<void> loadRequest(
-      LoadRequestParams params,
-      ) {
+    LoadRequestParams params,
+  ) {
     throw UnimplementedError(
         'loadRequest is not implemented on the current platform');
   }
@@ -191,8 +191,8 @@ abstract class PlatformWebViewController extends PlatformInterface {
 
   /// Adds a new JavaScript channel to the set of enabled channels.
   Future<void> addJavaScriptChannel(
-      JavaScriptChannelParams javaScriptChannelParams,
-      ) {
+    JavaScriptChannelParams javaScriptChannelParams,
+  ) {
     throw UnimplementedError(
         'addJavaScriptChannel is not implemented on the current platform');
   }
@@ -264,10 +264,64 @@ abstract class PlatformWebViewController extends PlatformInterface {
   /// Sets a callback that notifies the host application that web content is
   /// requesting permission to access the specified resources.
   Future<void> setOnPlatformPermissionRequest(
-      void Function(PlatformWebViewPermissionRequest request) onPermissionRequest,
-      ) {
+    void Function(PlatformWebViewPermissionRequest request) onPermissionRequest,
+  ) {
     throw UnimplementedError(
-      'setOnPermissionRequest is not implemented on the current platform',
+      'setOnPlatformPermissionRequest is not implemented on the current platform',
+    );
+  }
+
+  /// Gets the value used for the HTTP `User-Agent:` request header.
+  Future<String?> getUserAgent() {
+    throw UnimplementedError(
+      'getUserAgent is not implemented on the current platform',
+    );
+  }
+
+  /// Sets a callback that notifies the host application of any console messages
+  /// written to the JavaScript console.
+  Future<void> setOnConsoleMessage(
+      void Function(JavaScriptConsoleMessage consoleMessage) onConsoleMessage) {
+    throw UnimplementedError(
+      'setOnConsoleMessage is not implemented on the current platform',
+    );
+  }
+
+  /// Sets the listener for content offset changes.
+  Future<void> setOnScrollPositionChange(
+      void Function(ScrollPositionChange scrollPositionChange)?
+          onScrollPositionChange) {
+    throw UnimplementedError(
+        'setOnScrollPositionChange is not implemented on the current platform');
+  }
+
+  /// Sets a callback that notifies the host application that the web page
+  /// wants to display a JavaScript alert() dialog.
+  Future<void> setOnJavaScriptAlertDialog(
+      Future<void> Function(JavaScriptAlertDialogRequest request)
+          onJavaScriptAlertDialog) async {
+    throw UnimplementedError(
+      'setOnJavaScriptAlertDialog is not implemented on the current platform',
+    );
+  }
+
+  /// Sets a callback that notifies the host application that the web page
+  /// wants to display a JavaScript confirm() dialog.
+  Future<void> setOnJavaScriptConfirmDialog(
+      Future<bool> Function(JavaScriptConfirmDialogRequest request)
+          onJavaScriptConfirmDialog) async {
+    throw UnimplementedError(
+      'setOnJavaScriptConfirmDialog is not implemented on the current platform',
+    );
+  }
+
+  /// Sets a callback that notifies the host application that the web page
+  /// wants to display a JavaScript prompt() dialog.
+  Future<void> setOnJavaScriptTextInputDialog(
+      Future<String> Function(JavaScriptTextInputDialogRequest request)
+          onJavaScriptTextInputDialog) async {
+    throw UnimplementedError(
+      'setOnJavaScriptTextInputDialog is not implemented on the current platform',
     );
   }
 }

@@ -43,8 +43,8 @@ abstract class WebViewPlatform extends PlatformInterface {
   /// This function should only be called by the app-facing package.
   /// Look at using [WebViewCookieManager] in `webview_flutter` instead.
   PlatformWebViewCookieManager createPlatformCookieManager(
-      PlatformWebViewCookieManagerCreationParams params,
-      ) {
+    PlatformWebViewCookieManagerCreationParams params,
+  ) {
     throw UnimplementedError(
         'createPlatformCookieManager is not implemented on the current platform.');
   }
@@ -54,8 +54,8 @@ abstract class WebViewPlatform extends PlatformInterface {
   /// This function should only be called by the app-facing package.
   /// Look at using [NavigationDelegate] in `webview_flutter` instead.
   PlatformNavigationDelegate createPlatformNavigationDelegate(
-      PlatformNavigationDelegateCreationParams params,
-      ) {
+    PlatformNavigationDelegateCreationParams params,
+  ) {
     throw UnimplementedError(
         'createPlatformNavigationDelegate is not implemented on the current platform.');
   }
@@ -65,8 +65,8 @@ abstract class WebViewPlatform extends PlatformInterface {
   /// This function should only be called by the app-facing package.
   /// Look at using [WebViewController] in `webview_flutter` instead.
   PlatformWebViewController createPlatformWebViewController(
-      PlatformWebViewControllerCreationParams params,
-      ) {
+    PlatformWebViewControllerCreationParams params,
+  ) {
     throw UnimplementedError(
         'createPlatformWebViewController is not implemented on the current platform.');
   }
@@ -76,8 +76,8 @@ abstract class WebViewPlatform extends PlatformInterface {
   /// This function should only be called by the app-facing package.
   /// Look at using [WebViewWidget] in `webview_flutter` instead.
   PlatformWebViewWidget createPlatformWebViewWidget(
-      PlatformWebViewWidgetCreationParams params,
-      ) {
+    PlatformWebViewWidgetCreationParams params,
+  ) {
     throw UnimplementedError(
         'createPlatformWebViewWidget is not implemented on the current platform.');
   }
