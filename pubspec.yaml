@@ -1,0 +1,28 @@
+name: bootpay_webview_flutter_platform_interface
+description: webview_flutter_platform_interface 를 국내 결제환경에 맞게 fork 떠서 관리하는 프로젝트 입니다.
+repository: https://github.com/bootpay/bootpay_webview_flutter_platform_interface
+issue_tracker: https://github.com/bootpay/bootpay_webview_flutter_platform_interface/issues
+# NOTE: We strongly prefer non-breaking changes, even at the expense of a
+# less-clean API. See https://flutter.dev/go/platform-interface-breaking-changes
+version: 2.14.1
+
+environment:
+  sdk: ^3.5.0
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  meta: ^1.7.0
+  plugin_platform_interface: ^2.1.7
+
+dev_dependencies:
+  build_runner: ^2.1.8
+  flutter_test:
+    sdk: flutter
+  mockito: ^5.4.4
+
+topics:
+  - html
+  - webview
+  - webview-flutter
