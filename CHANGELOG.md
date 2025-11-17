@@ -1,4 +1,4 @@
-## 2.14.0
+## 2.14.1
 
 * **Bootpay Fork**: 최신 webview_flutter_platform_interface v2.14.0 기반
   - Package name: `webview_flutter_platform_interface` → `bootpay_webview_flutter_platform_interface`
